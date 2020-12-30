@@ -155,7 +155,7 @@ $(document).ready(function () {
     let currentAlgorithm = $(".form-control").val();
     if (currentAlgorithm == "breadth") {
       let path = await bfs(neighbors, start, target, (speed = speed));
-      if (!path) {
+      if (!path|| !path.length || !path[0]) {
         $(".messages").text("PAC-MAN Could Not Find The Ghost!");
       } else {
         drawPath(path);
@@ -163,7 +163,7 @@ $(document).ready(function () {
       }
     } else if (currentAlgorithm == "depth") {
       let path = await dfs(neighbors, start, target, (speed = speed));
-      if (!path) {
+      if (!path|| !path.length || !path[0]) {
         $(".messages").text("PAC-MAN Could Not Find The Ghost!");
       } else {
         drawPath(path);
@@ -172,14 +172,16 @@ $(document).ready(function () {
       drawPath(path);
     } else if (currentAlgorithm == "Bidirectional") {
       let path = await bidirectional(neighbors, start, target, (speed = speed));
-      if (!path || !path.length) {
+      console.log(path)
+      if (!path || !path.length || !path[0]) {
         $(".messages").text("PAC-MAN Could Not Find The Ghost!");
-      } else {
+      } else {  
         drawPath(path);
         $(".messages").text("PAC-MAN Found The Ghost!");
       }
       drawPath(path);
     }
+
     $(".btn").removeAttr("disabled");
   });
 });
