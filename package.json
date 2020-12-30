@@ -1,0 +1,16 @@
+{
+  "name": "graph-search",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pantojao/Pac-Man-Search.git"
+  },
+  "author": "Joel Pantoja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pantojao/Pac-Man-Search/issues"
+  },
+
+  "homepage": "https://github.com/pantojao/Pac-Man-Search#readme"
+}

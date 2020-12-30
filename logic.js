@@ -34,7 +34,8 @@ $(document).ready(function () {
   $(".main").append(squares.join(""));
 
   const ghost = '<img src="./ghost.png" id="ghost" class="draggable ghost"/>';
-  const pac = '<img src="./pac-man.png" id="pac-man"  class="draggable pac-man"/>';
+  const pac =
+    '<img src="./pac-man.png" id="pac-man"  class="draggable pac-man"/>';
 
   $("#38").append(pac);
   $("#122").append(ghost);
@@ -126,9 +127,8 @@ $(document).ready(function () {
     if (
       e.buttons == 1 &&
       !$(".pac-man").is(".ui-draggable-dragging") &&
-      !$(".ghost").is(".ui-draggable-dragging") 
+      !$(".ghost").is(".ui-draggable-dragging")
     ) {
-      console.log($(this).attr('class'))
       $(this).toggleClass("blocked");
     }
   });
@@ -144,7 +144,7 @@ $(document).ready(function () {
   });
 
   $(".run-algorithm").click(async function () {
-    $('.btn').attr('disabled','disabled');
+    $(".btn").attr("disabled", "disabled");
     let neighbors = getNeighbors();
     $(".best-path").each(function () {
       $(this).removeClass("best-path");
@@ -172,7 +172,6 @@ $(document).ready(function () {
       drawPath(path);
     } else if (currentAlgorithm == "Bidirectional") {
       let path = await bidirectional(neighbors, start, target, (speed = speed));
-      console.log(path)
       if (!path || !path.length) {
         $(".messages").text("PAC-MAN Could Not Find The Ghost!");
       } else {
@@ -181,8 +180,6 @@ $(document).ready(function () {
       }
       drawPath(path);
     }
-    $('.btn').removeAttr('disabled');
+    $(".btn").removeAttr("disabled");
   });
-
-
 });

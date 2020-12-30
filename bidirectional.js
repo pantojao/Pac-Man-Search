@@ -15,13 +15,13 @@ export const bidirectional = async function (neighbors, start, target, speed) {
     blockedSquares = $(".blocked");
 
   for (let square of blockedSquares) {
-    let boxNumber = $(square).attr("id")
-      if (boxNumber !== target){
+    let boxNumber = $(square).attr("id");
+    if (boxNumber !== target) {
       dic1[boxNumber] = null;
       dic2[boxNumber] = null;
+    }
   }
-}
- 
+
   while (queue1 && queue2) {
     if (queue1) {
       let current = queue1.shift();
@@ -46,13 +46,11 @@ export const bidirectional = async function (neighbors, start, target, speed) {
 
     if (queue2) {
       let current = queue2.shift();
-     
+
       $(`#${current}`).toggleClass("current-node");
       await pauseFunction();
       $(`#${current}`).toggleClass("target-visited");
-      console.log(current)
       if (dic1.hasOwnProperty(`${current}`) || current == start) {
-        console.log(current, "yes")
         lastNumber = current;
         $(`#${current}`).addClass("best-path");
         break;
@@ -68,11 +66,10 @@ export const bidirectional = async function (neighbors, start, target, speed) {
     }
   }
 
-
   let bestPath = [];
-  let recurse = function (currentNode, parents = {}){
+  let recurse = function (currentNode, parents = {}) {
     const parent = parents[`${currentNode}`];
-    if (parent!== null) {
+    if (parent !== null) {
       bestPath.push(parent);
       recurse(parent, parents);
     }

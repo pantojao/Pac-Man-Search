@@ -1,25 +1,23 @@
-
-
 export const bfs = async function (neighbors, start, target, speed) {
   function pauseFunction(x) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(x);
-      }, 110* (1/speed));
-    })
+      }, 110 * (1 / speed));
+    });
   }
-  
+
   let stack = [[start, [start]]];
   let set = new Set();
   let bestPath;
   let blockedSquares = $(".blocked");
 
   for (let square of blockedSquares) {
-    if ($(square).attr("id")!== target){
-    set.add($(square).attr("id"));
+    if ($(square).attr("id") !== target) {
+      set.add($(square).attr("id"));
     }
   }
-  
+
   while (stack.length !== 0) {
     let currentNode = stack.shift();
     let path = currentNode[1];
@@ -43,8 +41,8 @@ export const bfs = async function (neighbors, start, target, speed) {
     }
   }
 
-  for (let element of $('.square')){
-    $(element).removeClass("current-node target-visited")
+  for (let element of $(".square")) {
+    $(element).removeClass("current-node target-visited");
   }
 
   return bestPath;
