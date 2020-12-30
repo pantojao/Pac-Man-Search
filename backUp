@@ -1,0 +1,68 @@
+  // const bfs = async function (neighbors, start, target) {
+  //   let stack = [[start, [start]]];
+  //   let set = new Set();
+  //   let level = 1;
+  //   let bestPath;
+  //   let blockedSquares = $(".blocked");
+
+  //   for (let square of blockedSquares) {
+  //     set.add($(square).attr("id"));
+  //   }
+  //   while (stack.length !== 0) {
+  //     level++;
+  //     let currentNode = stack.shift();
+  //     let path = currentNode[1];
+  //     let current = currentNode[0];
+  //     $(`#${current}`).toggleClass("current-node");
+  //     await fiveSeconds(20);
+
+  //     $(`#${current}`).toggleClass("target-visited");
+  //     for (let neighbor of neighbors[current]) {
+  //       if (current == target || neighbor == target) {
+  //         bestPath = path;
+  //         stack = [];
+  //         break;
+  //       }
+
+  //       if (!set.has(neighbor)) {
+  //         stack.push([neighbor, [...path, neighbor]]);
+  //         set.add(`${neighbor}`);
+  //       }
+  //     }
+  //   }
+  //   return bestPath;
+  // };
+
+  // const dfs = async function (neighbors, start, target) {
+  //   let stack = [[start, [start]]];
+  //   let set = new Set();
+  //   let bestPath;
+  //   let blockedSquares = $(".blocked");
+  
+  //   for (let square of blockedSquares) {
+  //     set.add($(square).attr("id"));
+  //   }
+  //   while (stack.length !== 0) {
+  //     let currentNode = stack.pop();
+  //     let path = currentNode[1];
+  //     let current = currentNode[0];
+  //     $(`#${current}`).toggleClass("current-node");
+  //     await fiveSeconds(10);
+  
+  //     $(`#${current}`).toggleClass("target-visited");
+  //     for (let neighbor of neighbors[current]) {
+  //       if (current == target || neighbor == target) {
+  //         bestPath = path;
+  //         stack = [];
+  //         break;
+  //       }
+  
+  //       if (!set.has(neighbor)) {
+  //         stack.push([neighbor, [...path, neighbor]]);
+  //         set.add(`${neighbor}`);
+  //       }
+  //     }
+  //   }
+  //   return bestPath;
+  // };
+  
