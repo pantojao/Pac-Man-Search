@@ -82,13 +82,13 @@ $(document).ready(function () {
       let boxPosition = $(`#${i}`).position();
 
       let below = $(
-        document.elementFromPoint(boxPosition.left, boxPosition.top + 28)
+        document.elementFromPoint(boxPosition.left, boxPosition.top + 27)
       );
       let above = $(
         document.elementFromPoint(boxPosition.left, boxPosition.top - 5)
       );
       let right = $(
-        document.elementFromPoint(boxPosition.left + 28, boxPosition.top)
+        document.elementFromPoint(boxPosition.left + 27, boxPosition.top)
       );
       let left = $(
         document.elementFromPoint(boxPosition.left - 5, boxPosition.top)
