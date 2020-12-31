@@ -180,8 +180,8 @@ body{
 
 @media only screen and (max-width: 740px) {
   .main{
-    max-width: 95vw;
-    max-height: 52vh;
+    max-width: 98vw;
+    max-height: 55vh;
   }
 
   .explanations{

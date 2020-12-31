@@ -25,7 +25,7 @@ export const bidirectional = async function (neighbors, start, target, speed) {
   while (queue1.length !==0 && queue2.length!==0) {
     if (queue1) {
       let current = queue1.shift();
-      dic1[start] = null;
+      
       $(`#${current}`).toggleClass("current-node");
       await pauseFunction();
       $(`#${current}`).toggleClass("target-visited");
@@ -42,6 +42,7 @@ export const bidirectional = async function (neighbors, start, target, speed) {
           dic1[`${neighbor}`] = current;
         }
       }
+      dic1[start] = null;
     }
 
     if (queue2) {
@@ -68,7 +69,6 @@ export const bidirectional = async function (neighbors, start, target, speed) {
   let bestPath = [];
 
   let recurse = function (currentNode, parents = {}, count = 0 ) {
-
     const parent = parents[`${currentNode}`];
     if (parent !== null && count < 1000) {
       bestPath.push(parent);

@@ -133,6 +133,12 @@ $(document).ready(function () {
     }
   });
 
+  $('.square').on('touchstart click', function(){ 
+    $(this).addClass("blocked");
+   });
+
+ 
+
   $(".reset-blocked").click(function () {
     $(".blocked").each(function () {
       $(this).removeClass("blocked");
@@ -172,7 +178,7 @@ $(document).ready(function () {
       drawPath(path);
     } else if (currentAlgorithm == "Bidirectional") {
       let path = await bidirectional(neighbors, start, target, (speed = speed));
-      console.log(path)
+      
       if (!path || !path.length || !path[0]) {
         $(".messages").text("PAC-MAN Could Not Find The Ghost!");
       } else {  
