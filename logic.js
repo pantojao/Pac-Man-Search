@@ -82,16 +82,16 @@ $(document).ready(function () {
       let boxPosition = $(`#${i}`).position();
 
       let below = $(
-        document.elementFromPoint(boxPosition.left, boxPosition.top + 35)
+        document.elementFromPoint(boxPosition.left, boxPosition.top + 28)
       );
       let above = $(
-        document.elementFromPoint(boxPosition.left, boxPosition.top - 15)
+        document.elementFromPoint(boxPosition.left, boxPosition.top - 5)
       );
       let right = $(
-        document.elementFromPoint(boxPosition.left + 35, boxPosition.top)
+        document.elementFromPoint(boxPosition.left + 28, boxPosition.top)
       );
       let left = $(
-        document.elementFromPoint(boxPosition.left - 15, boxPosition.top)
+        document.elementFromPoint(boxPosition.left - 5, boxPosition.top)
       );
       let temp = [];
 
