@@ -8,6 +8,7 @@ $(document).ready(function () {
     <p>2) Drag & Drop PAC-MAN or Ghost</p>
     <p>3) Pick Your Algorithm</p>
     <p>4) Adjust The Speed</p>
+    <em> Use Desktop Version For Full Experience </em>
   `;
 
   $(".more-info").popover({
@@ -133,8 +134,8 @@ $(document).ready(function () {
     }
   });
 
-  $('.square').on('touchstart click', function(){ 
-    $(this).addClass("blocked");
+  $('.square').on('touchstart', function(){ 
+    $(this).toggleClass("blocked");
    });
 
  

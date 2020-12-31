@@ -166,10 +166,9 @@ body{
 
 
 @media only screen and (max-width: 1400px) { 
-
   .main{
     max-width: 95vw;
-    max-height: 60vh;
+    max-height: 65vh;
     overflow:hidden;
     margin: 1em auto;
     display: grid;
